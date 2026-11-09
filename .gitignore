@@ -1,0 +1,21 @@
+# Compiled files
+visual_auditor
+benchmark_image
+benchmark_similarity
+*.o
+*.exe
+
+# Generated datasets and results
+data/
+results/
+
+# Submission archives and logs
+submission/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Editor and OS files
+.DS_Store
+.vscode/

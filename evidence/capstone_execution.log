@@ -1,0 +1,60 @@
+=== GPU Visual Dataset Auditor: Capstone ===
+[1/6] Building CUDA application...
+nvcc -std=c++14 -arch=sm_86 -O2 -Isrc src/main.cu src/image_processor.cu src/image_metrics.cu src/image_hash.cu src/similarity.cu -o visual_auditor -I/usr/include/opencv4/opencv -I/usr/include/opencv4 -lopencv_stitching -lopencv_aruco -lopencv_bgsegm -lopencv_bioinspired -lopencv_ccalib -lopencv_dnn_objdetect -lopencv_dnn_superres -lopencv_dpm -lopencv_highgui -lopencv_face -lopencv_freetype -lopencv_fuzzy -lopencv_hdf -lopencv_hfs -lopencv_img_hash -lopencv_line_descriptor -lopencv_quality -lopencv_reg -lopencv_rgbd -lopencv_saliency -lopencv_shape -lopencv_stereo -lopencv_structured_light -lopencv_phase_unwrapping -lopencv_superres -lopencv_optflow -lopencv_surface_matching -lopencv_tracking -lopencv_datasets -lopencv_text -lopencv_dnn -lopencv_plot -lopencv_ml -lopencv_videostab -lopencv_videoio -lopencv_viz -lopencv_ximgproc -lopencv_video -lopencv_xobjdetect -lopencv_objdetect -lopencv_calib3d -lopencv_imgcodecs -lopencv_features2d -lopencv_flann -lopencv_xphoto -lopencv_photo -lopencv_imgproc -lopencv_core
+[2/6] Generating datasets...
+Generated 500 images in data/images
+Generated 4 validation images.
+Generated 120 images.
+Groups: 20
+Output: data/robustness
+[3/6] Running GPU image processing...
+
+=== Visual Dataset Auditor ===
+Images found:        500
+Images processed:    500
+Images failed:       0
+Similar image pairs: 6113
+Similarity threshold: 5
+Elapsed time:        17.539 s
+
+Reports saved to: results/processed
+
+=== Visual Dataset Auditor ===
+Images found:        120
+Images processed:    120
+Images failed:       0
+Similar image pairs: 200
+Similarity threshold: 5
+Elapsed time:        3.06283 s
+
+Reports saved to: results/optimized_validation
+[4/6] Evaluating similarity detection...
+
+=== Similarity Detection Evaluation ===
+Images:               120
+Total possible pairs: 7140
+Expected pairs:       200
+Detected pairs:       200
+
+True positives:       200
+False positives:      0
+False negatives:      0
+True negatives:       6940
+
+Precision:            1.0000
+Recall:               1.0000
+F1 score:             1.0000
+[5/6] Generating audit summary...
+Dataset audit summary generated
+Images analyzed: 120
+Pairs in similarity report: 200
+Similar pairs: 200
+JSON report: results/capstone_audit/audit_summary.json
+Markdown report: results/capstone_audit/audit_summary.md
+[6/6] Generating visual reports...
+Dashboard generated: results/capstone_audit/quality_distribution.png
+Similarity examples generated: results/capstone_audit/similarity_examples.png
+Pairs visualized: 4
+========================================
+Capstone execution completed!
+========================================

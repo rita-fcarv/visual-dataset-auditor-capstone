@@ -1,0 +1,7 @@
+resolution,cpu_gray_ms,gpu_gray_ms,gray_speedup,cpu_metrics_ms,gpu_metrics_ms,metrics_speedup
+Resolution: 128x128 | Differing pixels: 0 | Maximum difference: 0
+128x128,0.0365,0.2398,0.1522,0.0528,0.2467,0.2142
+Resolution: 512x512 | Differing pixels: 16 | Maximum difference: 1
+512x512,0.5600,0.3675,1.5239,0.8128,0.6902,1.1775
+Resolution: 1024x1024 | Differing pixels: 64 | Maximum difference: 1
+1024x1024,2.2104,0.9384,2.3556,3.2144,1.1507,2.7935
